@@ -269,6 +269,9 @@ the loadFinished is automatically sent when the video element finishes loading a
        * Shows the dialog
        */
       show: function () {
+        if(this._hideHandle) {
+          this.cancelAsync(this._hideHandle);
+        }
         this.style.display = 'block';
         this.async(function () {
           this.style.opacity = 1;
@@ -280,7 +283,7 @@ the loadFinished is automatically sent when the video element finishes loading a
        */
       hide: function () {
         this.style.opacity = 0;
-        this.async(function () {
+        this._hideHandle = this.async(function () {
           this.style.display = 'none';
           this.hideAllLayers();
         }, 600);
