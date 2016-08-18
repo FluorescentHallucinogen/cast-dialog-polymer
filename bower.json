@@ -2,6 +2,7 @@
   "name": "cast-dialog-polymer",
   "description": "cast dialog element",
   "keywords": [
+    "web-components",
     "cast",
     "dialog",
     "polymer"
